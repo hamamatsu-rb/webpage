@@ -72,8 +72,13 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    <img class="img-portfolio img-responsive" src="img/hmrblogo1_square.png"  width="250" height="250" >           
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Hamamatsu.rbはプログラミング言語Rubyに関心のある人が集まって、お話や勉強をする地域コミュニティです。
+                    <h2>Hamamatsu.rbはプログラミング言語Rubyに関心のある人が集まって、話や勉強をする地域コミュニティです。
                     </h2>
 
                     <p class="lead">毎月第2水曜日に開催しています。スケジュールは<a target="_blank" href="https://hmrb.doorkeeper.jp/">DoorKeeper</a>のイベントページをご確認ください。</p>
@@ -102,7 +107,7 @@
                                 <h4>
                                     <strong>Cloud</strong>
                                 </h4>
-                                <p>クラウド、特にAWSに興味があります。</p>
+                                <p>クラウド、特にAWS</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -115,7 +120,7 @@
                                 <h4>
                                     <strong>Mobile Apps</strong>
                                 </h4>
-                                <p>モバイルアプリ開発に興味があります。</p>
+                                <p>モバイルアプリ開発</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -141,7 +146,7 @@
                                 <h4>
                                     <strong>Beer</strong>
                                 </h4>
-                                <p>反省会と称して飲むのが好きです。</p>
+                                <p>反省会という飲み会</p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
@@ -157,10 +162,10 @@
 
     <!-- Callout -->
     <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>HamamatsuRubyKaigi01</h1>
-            <h3><a href="http://regional.rubykaigi.org/hamamatsu01/">2015.3.28に浜松Ruby会議01を開催しました。</a></h3>
-        </div>
+      <div class="text-vertical-center">
+        <h1>HamamatsuRubyKaigi01</h1>
+        <h3><a href="http://regional.rubykaigi.org/hamamatsu01/"><strong>2015.3.28に浜松Ruby会議01を開催しました。</strong></a></h3>
+      </div>
     </aside>
 
     <!-- Portfolio -->
@@ -168,34 +173,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
+                    <h2>Our Activity</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/IMG_0236.JPG">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/IMG_0237.JPG">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/IMG_1295.JPG">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                    <img class="img-portfolio img-responsive" src="img/IMG_0107.JPG">
                                 </a>
                             </div>
                         </div>
@@ -220,6 +225,17 @@
                     <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
                 </div>
             </div>
+        </div>
+    </aside>
+
+    <!-- Next Event -->
+    <aside class="nextevent">
+        <div class="text-vertical-center">
+          <div class="col-lg-12 text-center">
+            <h3>Next Event</h3>
+            <a href="#" class="btn btn-lg btn-light">Click Me!</a>
+        </div>
+          
         </div>
     </aside>
 
@@ -249,6 +265,7 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Hamamatsu.rb</strong>
                     </h4>
+                    <a href="#" onClick="doorkeeperLoader();">データ取得</a>
                     <p>@jacoyutorius</p>
                  <!--    <br>
                     Beverly Hil ls, CA 90210</p>-->
@@ -315,9 +332,33 @@
     </script>
 
     <script type="text/javascript">
-        $.getJSON("http://api.doorkeeper.jp/groups/hmrb/events", function(json){
-            alert("json");
-        })
+        // $.getJSON("http://api.doorkeeper.jp/groups/hmrb/events", function(json){
+        //     alert("json");
+        // });
+        function doorkeeperLoader(){
+            $.ajax({
+            url: "https://api.doorkeeper.jp/groups/jawsug-hamamatsu/events",
+            // url: "https://b.hatena.ne.jp/entry/json/?url=http%3A%2F%2Fwww.hatena.ne.jp%2F",
+            type: "GET",
+            datatype: "json" ,
+            headers:{
+                "Content-Type": "application/json"
+            },
+            timeout: 100000,
+            crossDomain: true,
+            success: function(data){
+                console.table(dat);
+            },
+            error: function(data){
+                console.log("Error!");
+                console.log(data);
+                alert(data);
+
+            },
+            complete: function(data){}
+          });
+        }
+        
     </script>
 
 </body>
