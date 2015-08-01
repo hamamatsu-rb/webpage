@@ -265,6 +265,11 @@ video {
 
 /* Map */
 
+.schedule{
+  /*color: #FFFFFF;*/
+  /*background-color: rgba(27, 107, 189, 100);*/
+}
+
 .map {
     height: 450px;
 }
@@ -282,13 +287,13 @@ footer {
     background-color: rgba(27, 107, 189, 100);
 }
 
-/*footer > a {
+footer > a {
   color: #FFFFFF;
 }
 
 footer > div > div > div > ul.list-inline > li:nth-child > a {
   color: #FFFFFF;
-}*/
+}
 
 footer-mailto {
   color: #FFFFFF;
@@ -300,4 +305,16 @@ i.fa.fa-twitter.fa-fw.fa-3x {
 
 i.fa.fa-github.fa-fw.fa-3x {
     color: #FFFFFF;
+}
+
+
+.panel-default{
+  border-color: #FFFFFF;
+}
+.panel-default > .panel-title{
+  color: #FFFFFF;
+  background-color: #F17825;
+}
+.panel-body{
+  padding: 0px;
 }
